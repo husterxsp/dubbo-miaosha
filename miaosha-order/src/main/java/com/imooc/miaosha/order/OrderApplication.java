@@ -1,0 +1,22 @@
+package com.imooc.miaosha.order;
+
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+/**
+ * @author xushaopeng
+ * @date 2019/05/18
+ */
+@SpringBootApplication(scanBasePackages = "com.imooc.miaosha.order")
+@EnableDiscoveryClient
+//@MapperScan({"com.imooc.miaosha.order.mapper"})
+@EnableDubbo(scanBasePackages = "com.imooc.miaosha.order")
+public class OrderApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(OrderApplication.class, args);
+    }
+
+}
